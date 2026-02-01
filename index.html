@@ -54,33 +54,23 @@
     }
 </style>
 </head>
-<body>
+<body>    
 
 <div class="card" id="card">
-    <h1>Hi PP💕</h1>
-    <br>
-    <button onclick="askValentine()">Click here 💌</button>
+    <h1>Hi PP 💕</h1>
+    <p>Will you be my Valentine?</p>
+    <button id="yes" onclick="yesClicked()">YES 💘</button>
+    <button id="no">NO 😅</button>
 </div>
 
 <script>
-function askValentine() {
-    const name = document.getElementById("name").value || "Cutie";
-    document.getElementById("card").innerHTML = `
-        <h1>${name} 💖</h1>
-        <p>Will you be my Valentine?</p>
-        <button id="yes" onclick="yesClicked()">YES 💘</button>
-        <button id="no">NO 😅</button>
-    `;
-
-    const noBtn = document.getElementById("no");
-    noBtn.addEventListener("mouseover", moveNo);
-    noBtn.addEventListener("click", moveNo);
-}
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
 
 function moveNo() {
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 50);
-    const noBtn = document.getElementById("no");
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 }
@@ -91,6 +81,7 @@ function yesClicked() {
         <p>You just made my Valentine's Day ❤️</p>
     `;
 }
+
 </script>
 
 </body>
